@@ -1,0 +1,7 @@
+<nav class="site-nav">
+  <a href="{{ '/' | relative_url }}" class="site-title">Hande Dong</a>
+  <div class="nav-links">
+    <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+    <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+  </div>
+</nav>

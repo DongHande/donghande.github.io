@@ -1,0 +1,21 @@
+title: Hande Dong
+description: "LLM R&D Lead at Tencent CodeBuddy/WorkBuddy"
+url: "https://donghande.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock

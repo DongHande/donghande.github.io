@@ -1,0 +1,26 @@
+---
+layout: default
+title: "Blog"
+permalink: /blog/
+---
+
+<div class="blog-list">
+  <h1>Blog</h1>
+  <p class="blog-subtitle">Thoughts on LLMs, AI, and research</p>
+
+  {% for post in site.posts %}
+  <article class="blog-entry">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <time>{{ post.date | date: "%B %d, %Y" }}</time>
+    {% if post.description %}
+    <p class="excerpt">{{ post.description }}</p>
+    {% elsif post.excerpt %}
+    <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    {% endif %}
+  </article>
+  {% endfor %}
+
+  {% if site.posts.size == 0 %}
+  <p>No posts yet. Stay tuned!</p>
+  {% endif %}
+</div>
