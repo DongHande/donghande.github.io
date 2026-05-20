@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why Scaling Compute Can't Save LLMs"
-date: 2025-05-19
+date: 2026-05-19
 description: "A structural analysis of why LLMs fail at non-convergent tasks — from first principles."
 ---
 
