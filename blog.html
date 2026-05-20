@@ -8,15 +8,11 @@ permalink: /blog/
   <h1>Blog</h1>
   <p class="blog-subtitle">Thoughts on LLMs, AI, and research</p>
 
-  {% assign all_posts = site.pages | where_exp: "page", "page.url contains '/blog/' and page.title" %}
-  {% assign blog_posts = "" | split: "" %}
-  {% for page in all_posts %}
-    {% unless page.url == "/blog/" or page.lang == "zh" %}
-      {% assign blog_posts = blog_posts | push: page %}
-    {% endunless %}
-  {% endfor %}
-  {% assign blog_posts = blog_posts | sort: "date" | reverse %}
-  {% for post in blog_posts %}
+  {% for post in site.pages %}
+    {% if post.url contains '/blog/' %}
+    {% unless post.url == "/blog/" %}
+    {% unless post.lang == "zh" %}
+    {% if post.title %}
   <article class="blog-entry">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     <time>{{ post.date | date: "%B %d, %Y" }}</time>
@@ -24,9 +20,9 @@ permalink: /blog/
     <p class="excerpt">{{ post.description }}</p>
     {% endif %}
   </article>
+    {% endif %}
+    {% endunless %}
+    {% endunless %}
+    {% endif %}
   {% endfor %}
-
-  {% if blog_posts.size == 0 %}
-  <p>No posts yet. Stay tuned!</p>
-  {% endif %}
 </div>
