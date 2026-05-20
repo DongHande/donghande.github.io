@@ -8,7 +8,14 @@ permalink: /blog/
   <h1>Blog</h1>
   <p class="blog-subtitle">Thoughts on LLMs, AI, and research</p>
 
-  {% assign blog_posts = site.pages | where_exp: "page", "page.url contains '/blog/' and page.title and page.url != '/blog/' and page.lang != 'zh'" | sort: "date" | reverse %}
+  {% assign all_posts = site.pages | where_exp: "page", "page.url contains '/blog/' and page.title" %}
+  {% assign blog_posts = "" | split: "" %}
+  {% for page in all_posts %}
+    {% unless page.url == "/blog/" or page.lang == "zh" %}
+      {% assign blog_posts = blog_posts | push: page %}
+    {% endunless %}
+  {% endfor %}
+  {% assign blog_posts = blog_posts | sort: "date" | reverse %}
   {% for post in blog_posts %}
   <article class="blog-entry">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
