@@ -3,7 +3,10 @@ layout: post
 title: "Why Scaling Compute Can't Save LLMs"
 date: 2026-05-19
 description: "A structural analysis of why LLMs fail at non-convergent tasks — from first principles."
+permalink: /blog/01-convergence-boundary/
 ---
+
+[中文版 →](/blog/01-convergence-boundary-zh/)
 
 > My day job is training large language models and building Agent applications. This post comes from a structural problem I keep running into in practice.
 
@@ -80,7 +83,7 @@ Whether a strategy converges depends on whether its underlying assumptions chang
 The essence of convergence is **error decay**: you make a small mistake, and the system absorbs it, returning to track.
 The essence of non-convergence is **error amplification**: you make a small mistake, and the system amplifies it exponentially until total loss of control — this is precisely what the butterfly effect means.
 
-![Convergence vs Divergence](/assets/blog/convergence-boundary/convergence-diagram.svg)
+![Convergence vs Divergence](convergence-diagram.svg)
 
 ### The convergent world: AI's absolute domain
 
