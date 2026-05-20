@@ -80,7 +80,7 @@ Whether a strategy converges depends on whether its underlying assumptions chang
 The essence of convergence is **error decay**: you make a small mistake, and the system absorbs it, returning to track.
 The essence of non-convergence is **error amplification**: you make a small mistake, and the system amplifies it exponentially until total loss of control — this is precisely what the butterfly effect means.
 
-![Convergence vs Divergence](/images/convergence-diagram.svg)
+![Convergence vs Divergence](/assets/blog/convergence-boundary/convergence-diagram.svg)
 
 ### The convergent world: AI's absolute domain
 
