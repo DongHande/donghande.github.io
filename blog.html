@@ -8,7 +8,8 @@ permalink: /blog/
   <h1>Blog</h1>
   <p class="blog-subtitle">Thoughts on LLMs, AI, and research</p>
 
-  {% for post in site.pages %}
+  {% assign sorted_pages = site.pages | sort: "date" | reverse %}
+  {% for post in sorted_pages %}
     {% if post.url contains '/blog/' %}
     {% unless post.url == "/blog/" %}
     {% unless post.lang == "zh" %}
